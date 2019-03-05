@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
-
+/*-------------------- M A I N --------------------*/
 #root{
   width: 100%;
   max-width: 1200px;
@@ -13,8 +13,10 @@
   box-sizing: border-box;
 }
 
+section{
+    /* min-height: 100vw; */
+}
 /*-------------------- O N E  P R O J E C T --------------------*/
-
 /*----CONTAINER----*/
 .one-project-container{
     width: 100%;
@@ -34,7 +36,7 @@
 .one-project-container .title h1, .one-project-container .title h2 {
     margin : 0 1rem;
     white-space: nowrap;
-    filter: drop-shadow(0.01em 0.01em 0.01em rgba(black, 0.21));
+    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
 }
 
 .one-project-container .title h1 {
@@ -45,7 +47,7 @@
     text-transform : uppercase;
     animation : translateh1 3s ;
     margin:0;
-    filter: drop-shadow(0.01em 0.01em 0.01em rgba(black, 0.21));
+    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
 }
 
 .one-project-container.right .title h1{
@@ -65,7 +67,7 @@
     animation : translateh2 3s;
     bottom: -5px;
     left: 45%;
-    filter: drop-shadow(0.01em 0.01em 0.01em rgba(black, 0.21));
+    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
 }  
 
 .one-project-container.right .title h2{
