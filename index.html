@@ -6,145 +6,161 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
     </head>
-    <title>Porfolio</title>
+    <title>Chloe C.</title>
 <body>
-        <section class="introduction">
-            <div class="title">Chloe <br/> Cuanbinh</div>
-            <div class="subtitle"> full-stack Developper in training, passionate about front-end development</div>
-            <div class="button-down">
-                <div>
-                  <i class="fas fa-angle-down"></i>
+    <div class="header" id="header">
+        <h1>Home</h1>
+        <h1>About</h1>
+        <h1>Projects</h1>
+        <h1>Media</h1>
+    </div>
+        
+    <div class="button" id="menu">
+        <i class="fas fa-grip-lines"></i>
+        <i class="fas fa-grip-lines"></i>
+    </div>
+    <section class="introduction">
+        <div class="title">Chloe <br/> Cuanbinh</div>
+        <div class="subtitle"> full-stack Developper in training</div>
+        <div class="button-down">
+            <a id="to_matcha" >
+                <i class="fas fa-angle-down"></i>
+            </a>
+        </div>
+    </section>
+    <section id="matcha">
+        <div class="one-project-container" >
+            <div class="title">
+                <h1>42 Matcha</h1>
+                <h2>- dating website -</h2>
+            </div>
+
+            <div class="description">
+                <h2>2019, January-February </h2>
+                <h1>Back/Front</h1>
+            </div>
+
+            <div class="more-description">
+                <h3>NodeJS</h3>
+                <h3>ReactJS</h3>
+                <h3>PostgreSQL</h3>
+                <h3>ExpressJs</h3>
+                <h3>Socket.io</h3>
+                <h3>HTML/CSS</h3>
+                <h3>Sass</h3>
+                <div class="link">
+                    <a target="_blank" href="https://github.com/ccu-an-b/Matcha">See code</a>
                 </div>
             </div>
-        </section>
-        <section>
-            <div class="one-project-container">
-                <div class="title">
-                    <h1>42 Matcha</h1>
-                    <h2>- dating website -</h2>
-                </div>
 
+            <div class="screen-container">
+                <div class="screen full">
+                    <img src="matcha_full.png"
+                    />
+                </div>
+                <div class="screen phone">
+                    <img src="matcha_phone.png"
+                    />
+                </div>
+            </div>
+        </div>  
+    </section>
+    <section >
+        <div class="one-project-container right">
+            <div class="title">
+                <h1>Freelance</h1>
+                <h2>- social network -</h2>
+                </div>
                 <div class="description">
-                    <h2>2019, January-February </h2>
+                    <h2>2018, September-December </h2>
                     <h1>Back/Front</h1>
                 </div>
-
                 <div class="more-description">
-                    <h3>NodeJS</h3>
-                    <h3>ReactJS</h3>
-                    <h3>PostgreSQL</h3>
-                    <h3>ExpressJs</h3>
-                    <h3>Socket.io</h3>
-                    <h3>HTML/CSS</h3>
-                    <h3>Sass</h3>
-                    <div class="link">
-                        <a target="_blank" href="https://github.com/ccu-an-b/Matcha">See code</a>
-                    </div>
+                <h3>PHP</h3>
+                <h3>Javascript</h3>
+                <h3>jQuery</h3>
+                <h3>Ajax</h3>
+                <h3>MySQL</h3>
+                <h3>HTML/CSS</h3>
                 </div>
-
                 <div class="screen-container">
-                    <div class="screen full">
-                        <img src="matcha_full.png"
-                        />
-                    </div>
-                    <div class="screen phone">
-                        <img src="matcha_phone.png"
-                        />
-                    </div>
+                <div class="screen full">
+                <img src="freelance_full.png"
+                />
                 </div>
-            </div>  
-        </section>
-        <section>
-            <div class="one-project-container right">
-                <div class="title">
-                    <h1>Freelance</h1>
-                    <h2>- social network -</h2>
-                    </div>
-                    <div class="description">
-                        <h2>2018, September-December </h2>
-                        <h1>Back/Front</h1>
-                    </div>
-                    <div class="more-description">
-                    <h3>PHP</h3>
-                    <h3>Javascript</h3>
-                    <h3>jQuery</h3>
-                    <h3>Ajax</h3>
-                    <h3>MySQL</h3>
-                    <h3>HTML/CSS</h3>
-                    </div>
-                    <div class="screen-container">
-                    <div class="screen full">
-                    <img src="freelance_full.png"
-                    />
-                    </div>
-                    <div class="screen phone">
-                    <img src="freelance_phone.png"
-                    />
-                    </div>
-                    </div>
+                <div class="screen phone">
+                <img src="freelance_phone.png"
+                />
+                </div>
+                </div>
+        </div>
+    </section>
+    <section>
+        <div class="one-project-container camagru">
+            <div class="title">
+                <h1>42 Camagru</h1>
+                <h2>- instagram-like website -</h2>
             </div>
-        </section>
-        <section>
-            <div class="one-project-container camagru">
-                <div class="title">
-                    <h1>42 Camagru</h1>
-                    <h2>- instagram-like website -</h2>
-                </div>
 
+            <div class="description">
+                <h2>2018, June-August </h2>
+                <h1>Back/Front</h1>
+            </div>
+
+            <div class="more-description">
+                <h3>PHP</h3>
+                <h3>Javascript</h3>
+                <h3>Ajax</h3>
+                <h3>MySQL</h3>
+                <h3>HTML/CSS</h3>
+                <div class="link">
+                    <a target="_blank" href="https://github.com/ccu-an-b/Camagru">See code</a>
+                </div>
+            </div>
+            <div class="screen-container">
+                <div class="screen full">
+                    <img src="camagru_full.png"
+                    />
+                </div>
+                <div class="screen phone">
+                    <img height="450px" src="camagru_full.png"
+                    />
+                </div>
+            </div>
+        </div> 
+    </section>
+    <section>   
+        <div class="one-project-container right yser">
+            <div class="title">
+                <h1>Freelance</h1>
+                <h2>-  gdpr services -</h2>
+                </div>
                 <div class="description">
-                    <h2>2018, June-August </h2>
-                    <h1>Back/Front</h1>
+                    <h2>2018, May</h2>
+                    <h1>Front</h1>
                 </div>
-
                 <div class="more-description">
-                    <h3>PHP</h3>
-                    <h3>Javascript</h3>
-                    <h3>Ajax</h3>
-                    <h3>MySQL</h3>
-                    <h3>HTML/CSS</h3>
-                    <div class="link">
-                        <a target="_blank" href="https://github.com/ccu-an-b/Camagru">See code</a>
-                    </div>
+                <h3>Javascript</h3>
+                <h3>HTML/CSS</h3>
                 </div>
                 <div class="screen-container">
-                    <div class="screen full">
-                        <img src="camagru_full.png"
-                        />
-                    </div>
-                    <div class="screen phone">
-                        <img height="450px" src="camagru_full.png"
-                        />
-                    </div>
+                <div class="screen full">
+                <img src="yser_full.png"
+                />
                 </div>
-            </div> 
-        </section>
-        <section>   
-            <div class="one-project-container right yser">
-                <div class="title">
-                    <h1>Freelance</h1>
-                    <h2>-  gdpr services -</h2>
-                    </div>
-                    <div class="description">
-                        <h2>2018, May</h2>
-                        <h1>Front</h1>
-                    </div>
-                    <div class="more-description">
-                    <h3>Javascript</h3>
-                    <h3>HTML/CSS</h3>
-                    </div>
-                    <div class="screen-container">
-                    <div class="screen full">
-                    <img src="yser_full.png"
-                    />
-                    </div>
-                    <div class="screen phone">
-                    <img src="yser_phone.png"
-                    />
-                    </div>
-                    </div>
-            </div>
-        </section>
+                <div class="screen phone">
+                <img src="yser_phone.png"
+                />
+                </div>
+                </div>
+        </div>
+    </section>
+    <section id="Media">
+        <h1>Media</h1>
+    </section>
+
 </body>
 </html>
 <script src="main.js"></script>

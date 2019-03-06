@@ -1,8 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Calligraffitti);
 /*-------------------- M A I N --------------------*/
 body{
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     color: #394053; 
+    margin:0;
 }
 
 *{
@@ -18,7 +19,73 @@ section{
     flex-direction:column;
 }
 
+.body-container{
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*-------------------- H E A D E R --------------------*/
+.header {
+    position:fixed;
+    width:100%;
+    z-index:10;
+    transition: all .3s;
+    background-color:#394053;
+    height:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    color:white;
+}
+  
+.header.active{
+    height:100vh;
+}
+
+.header h1{
+    text-align:center;
+}
+#menu.button {
+    float:right;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:10px;
+    margin:20px;
+    font-size: 30px;
+    cursor:pointer;
+    position:fixed;
+    z-index:25;
+    right:0;
+}
+
+#menu.button  i {
+    margin-top:-23px;
+    transition: all .6s;
+}
+
+#menu.button  i:first-child{
+    margin-top:0px;
+}
+
+#menu.button.active i{
+    transform: rotate(40deg) skewX(0deg);
+    margin-top:-30px;
+    color:white;
+}
+
+#menu.button.active i:first-child{
+    transform: rotate(-40deg) skewX(0deg);
+    margin-top:0px;
+}
+
 /*-------------------- I N T R O D U C T I O N --------------------*/
+.introduction * {
+    cursor:default;
+}
 .introduction .title{
     font-weight: 800;
     color: transparent;
@@ -47,6 +114,7 @@ section{
     padding-top:10px;
     text-transform:uppercase;
     font-family: 'Raleway', sans-serif;
+    animation: 5s ease-out  fadeIn;
 }
 
 .introduction .button-down{
@@ -58,8 +126,30 @@ section{
     font-size:25px;
   }
   
-.introduction .button-down div {
+.introduction .button-down a {
     cursor:pointer;
+    color: #394053;
+    transition: all .3s;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-decoration: none;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.introduction .button-down a:hover {
+    padding-top: 0;
+}
+
+.introduction .button-down a i{
+    cursor:pointer;
+    transition: all .3s;
+    text-shadow: 0em 0.4em 0.15em rgba(0,0,0, 0.21)
+}
+
+.introduction .button-down a:hover i{
+    text-shadow:  0em 0.6em 0.15em rgba(0,0,0, 0.21)
 }
 
 /*-------------------- O N E  P R O J E C T --------------------*/
@@ -225,7 +315,7 @@ section{
     object-fit: cover;
     border-radius: 4px;
     /* box-shadow: 10px 10px 15px -7px rgba(0, 0, 0, 0.1); */
-    box-shadow: 0px -1px 20px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.1);
 }
 
 .one-project-container.right .screen-container .screen img {
@@ -252,6 +342,8 @@ section{
     float: right;
 }
 
+
+/*-------------------- A N I M A T I O N S --------------------*/
 @keyframes translateh1{
   0% { opacity : 0; transform: translate(-16px, 0);}
   20% { opacity : 1; transform: translate(0, 0); }
@@ -266,3 +358,18 @@ section{
   82% { opacity : 0; transform: translate(32px, 0);}
   100% { opacity : 0; transform: translate(32px, 0);}
 }
+
+@keyframes slideLeft {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes slideRight {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0} to{opacity:1}
+}
+
