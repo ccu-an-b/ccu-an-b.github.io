@@ -1,12 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
 /*-------------------- M A I N --------------------*/
-#root{
-  width: 100%;
-  max-width: 1200px;
-  margin:auto;
-  margin-top:20px;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  color: #394053;
+body{
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    color: #394053; 
 }
 
 *{
@@ -14,13 +10,64 @@
 }
 
 section{
-    /* min-height: 100vw; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width:100%;
+    flex-direction:column;
 }
+
+/*-------------------- I N T R O D U C T I O N --------------------*/
+.introduction .title{
+    font-weight: 800;
+    color: transparent;
+    font-size:150px;
+    background: url("ccu-an-b.JPG") repeat;
+    background-position: 50% 25%;
+    background-size: cover;
+    -webkit-background-clip: text;
+    position:relative;
+    text-align:center;
+    line-height:120px;
+    letter-spacing: -9px;
+    text-transform:uppercase;
+    font-family: 'Raleway', sans-serif;
+    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21)) grayscale(100%);
+    transition: all .3s;
+}
+
+.introduction .title:hover{
+    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21))
+}
+.introduction .subtitle{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top:10px;
+    text-transform:uppercase;
+    font-family: 'Raleway', sans-serif;
+}
+
+.introduction .button-down{
+    position:absolute;
+    bottom: 30px;
+    display:flex;
+    justify-content:center;
+    width:100%;
+    font-size:25px;
+  }
+  
+.introduction .button-down div {
+    cursor:pointer;
+}
+
 /*-------------------- O N E  P R O J E C T --------------------*/
 /*----CONTAINER----*/
 .one-project-container{
     width: 100%;
     position: relative;
+    max-width: 1200px;
     margin: 20px 0;
     padding-top: 75px;
     min-height: 1050px;
