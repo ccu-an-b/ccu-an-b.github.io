@@ -1,3 +1,21 @@
+$(window).on('load', function(){
+    setTimeout(removeLoader, 2000); 
+    });
+    setTimeout(() => {
+        $(".introduction .title").css("line-height","120px")
+    }, 4000)
+    setTimeout(() => {
+        $(".introduction .subtitle").css("display","block")
+    }, 4000)
+    function removeLoader(){
+        $( "body").css("overflow-y", "auto");
+        $(".loading-text").css("opacity", "0");
+        $( "#loadingDiv" ).fadeOut(2000, function() {
+            $( "#loadingDiv" ).remove();
+    });  
+}
+  
+
 $(document).ready(function(){
     var mouseX, mouseY;
     var ww = $( window ).width();
