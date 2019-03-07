@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Calligraffitti);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Mr+Dafoe|Calligraffitti);
 /*-------------------- M A I N --------------------*/
 body{
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -26,13 +26,46 @@ section{
     height: 100%;
 }
 
+.section-title {
+    position: absolute;
+    top: 20%;
+    left: 6%;
+    color: #77BAB1;
+    font-size: 32px;
+    transform: rotate(-10deg);
+    font-family: "Mr Dafoe";
+    letter-spacing: 1.5px;
+    font-weight: 100;
+}
+
+.section-title h2 {
+    margin: 0;
+    margin-top: -20px;
+    margin-left: 20px;
+    cursor: default;
+}
+
+.section-title h4 {
+    margin: 0;
+    font-size: 18px;
+    cursor: default;
+}
+
+@media screen and (max-width: 800px){
+    .section-title{
+        align-self: flex-start;
+        margin-left: 20px;
+        margin-top: 70px;
+        position:initial;
+    }
+}
 
 /*-------------------- H E A D E R --------------------*/
 .header {
     position:fixed;
     width:100%;
     z-index:10;
-    transition: all .3s;
+    transition: all .6s;
     background-color:#394053;
     height:0;
     overflow:hidden;
@@ -47,8 +80,21 @@ section{
 }
 
 .header h1{
-    text-align:center;
+    text-align: center;
+    cursor: pointer;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin:0;
+    transition: all .3s;
 }
+
+.header h1:hover{
+    margin-left: -5px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+    color: #77BAB1;
+}
+
 #menu.button {
     float:right;
     display:flex;
@@ -83,6 +129,18 @@ section{
     margin-top:0px;
 }
 
+#menu.button i:nth-child(3), #menu.button i:nth-child(4) {
+    color:white;
+}
+
+#menu.button i:nth-child(3)
+{
+    margin-top: -33.5px;
+}
+#menu.button.active i:nth-child(3), #menu.button.active i:nth-child(4) {
+    display:none;
+}
+
 /*-------------------- I N T R O D U C T I O N --------------------*/
 .introduction * {
     cursor:default;
@@ -102,9 +160,12 @@ section{
     text-transform:uppercase;
     font-family: 'Raleway', sans-serif;
     filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21)) grayscale(100%);
-    transition: line-height 2.5s;
+    transition: all .5s, line-height ease 1.5s;
 }
 
+.introduction .title.show{
+    line-height: 120px;
+}
 .introduction .title:hover{
     filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21))
 }
@@ -116,6 +177,7 @@ section{
     text-transform:uppercase;
     font-family: 'Raleway', sans-serif;
     animation: 5s ease-out  fadeIn;
+    color: #77BAB1;
 }
 
 .introduction .button-down{
@@ -146,11 +208,48 @@ section{
 .introduction .button-down a i{
     cursor:pointer;
     transition: all .3s;
+    color: #77BAB1;
     text-shadow: 0em 0.4em 0.15em rgba(0,0,0, 0.21)
 }
 
 .introduction .button-down a:hover i{
     text-shadow:  0em 0.6em 0.15em rgba(0,0,0, 0.21)
+}
+
+@media screen and (max-width: 800px){
+    .introduction .title{
+      font-size: 80px;
+      letter-spacing: -7px;
+    }
+    .introduction .title.show{
+        line-height: 65px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .introduction .title{
+      font-size: 70px;
+    }
+    .introduction .title.show{
+        line-height: 55px;
+    }
+}
+
+/*-------------------- A B O U T --------------------*/
+
+.about{
+    position: relative;
+    background-color:#394053;
+}
+
+.about::after{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 20%;
+    background-color: white;
+    bottom: -10%;
+    transform: rotate(-5deg); 
 }
 
 /*-------------------- O N E  P R O J E C T --------------------*/
@@ -343,13 +442,122 @@ section{
     float: right;
 }
 
+
+/*-------------------- M E D I A --------------------*/
+
+.media{
+    position: relative;
+    background-color:#394053;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: initial;
+    padding:0 20px;
+    color:white;
+}
+
+.media::before{
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 20%;
+    background-color: white;
+    top: -10%;
+    transform: rotate(5deg); 
+}
+
+.media h5 {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    position: absolute;
+    bottom: 5px;
+    margin: 0;
+}
+
+.media .video {
+  
+    position: relative;
+    flex-basis: 40%;
+}
+
+.media .video .play{
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    background-color: #394053;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .5s;
+    font-family: roboto;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.media .video .play:hover{
+    opacity: 1;
+    background-color: white;
+    color: #394053
+}
+
+.media .video .play i {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.media .video img {
+    width: 100%;
+}
+
+.media .video h1{
+    cursor: default;
+    font-family: roboto;
+    font-weight: 900;
+    letter-spacing: 2px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+}
+
+.media .video p {
+    float: right;
+    text-align: right;
+    font-family: Raleway;
+    min-width: 250px;
+    width: 60%;
+    color: #D2D5DD;
+    color: #9FA2B2;
+    cursor: default;
+}
+.media .video .screenshot{
+    position: relative;
+}
+
+@media screen and (max-width: 800px){
+    .media{
+        flex-direction: column;
+        padding-top: 20%;
+        justify-content: center;
+    }
+
+    .media .video{
+        margin:20px;
+    }
+}
 /*-------------------- L O A D I N G --------------------*/
 #loadingDiv {
     position:absolute;
     top:0;
     left:0;
     width:100%;
-    height:100%;
+    height:100vh;
 }
 
 .loading {
@@ -377,36 +585,36 @@ section{
     height: 40px;
     display: inline-block;
     margin: 0 5px;
-    color: #fff;
+    color: #77BAB1;
     font-family: 'Raleway', sans-serif;
 }
 .loading-text span:nth-child(1) {
     filter: blur(0px);
-    animation: blur-text 1.5s 0s infinite linear alternate;
+    animation: blur-text 1s 0s infinite linear alternate;
 }
 .loading-text span:nth-child(2) {
     filter: blur(0px);
-    animation: blur-text 1.5s 0.2s infinite linear alternate;
+    animation: blur-text 1s 0.2s infinite linear alternate;
 }
 .loading-text span:nth-child(3) {
     filter: blur(0px);
-    animation: blur-text 1.5s 0.4s infinite linear alternate;
+    animation: blur-text 1s 0.4s infinite linear alternate;
 }
 .loading-text span:nth-child(4) {
     filter: blur(0px);
-    animation: blur-text 1.5s 0.6s infinite linear alternate;
+    animation: blur-text 1s 0.6s infinite linear alternate;
 }
 .loading-text span:nth-child(5) {
     filter: blur(0px);
-    animation: blur-text 1.5s 0.8s infinite linear alternate;
+    animation: blur-text 1s 0.8s infinite linear alternate;
 }
 .loading-text span:nth-child(6) {
     filter: blur(0px);
-    animation: blur-text 1.5s 1s infinite linear alternate;
+    animation: blur-text 1s 1s infinite linear alternate;
 }
 .loading-text span:nth-child(7) {
     filter: blur(0px);
-    animation: blur-text 1.5s 1.2s infinite linear alternate;
+    animation: blur-text 1s 1.2s infinite linear alternate;
 }
 
 /*-------------------- A N I M A T I O N S --------------------*/
