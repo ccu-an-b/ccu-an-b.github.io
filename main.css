@@ -191,7 +191,6 @@ section{
   
 .introduction .button-down a {
     cursor:pointer;
-    color: #394053;
     transition: all .3s;
     display: flex;
     justify-content: flex-start;
