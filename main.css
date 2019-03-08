@@ -18,8 +18,16 @@ section{
     align-items: center; 
     width:100%;
     flex-direction:column;
+    overflow: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,p{
+    cursor: default;
+}
 .body-container{
     scroll-behavior: smooth;
     width: 100%;
@@ -36,22 +44,26 @@ section{
     font-family: "Mr Dafoe";
     letter-spacing: 1.5px;
     font-weight: 100;
+    transition: all .5s;
 }
 
 .section-title h2 {
     margin: 0;
     margin-top: -20px;
     margin-left: 20px;
-    cursor: default;
+    font-weight: normal;
 }
 
 .section-title h4 {
     margin: 0;
     font-size: 18px;
-    cursor: default;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 800px){
+    section {
+        justify-content: initial;
+    }
     .section-title{
         align-self: flex-start;
         margin-left: 20px;
@@ -69,9 +81,6 @@ section{
     background-color:#394053;
     height:0;
     overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
     color:white;
 }
   
@@ -79,6 +88,15 @@ section{
     height:100vh;
 }
 
+.header-container{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position: relative;
+    
+}
 .header h1{
     text-align: center;
     cursor: pointer;
@@ -94,6 +112,30 @@ section{
     filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
     color: #77BAB1;
 }
+
+.header .header-links {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 22px;
+}
+.header .header-links a:visited, .header .header-links a:link {
+    color: white
+}
+.header .header-links i {
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.header .header-links i:hover{
+    padding: 5px 0px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+    color: #77BAB1;
+} 
 
 #menu.button {
     float:right;
@@ -144,6 +186,9 @@ section{
 /*-------------------- I N T R O D U C T I O N --------------------*/
 .introduction * {
     cursor:default;
+}
+.introduction{
+    justify-content: center;
 }
 .introduction .title{
     font-weight: 800;
@@ -250,6 +295,58 @@ section{
     bottom: -10%;
     transform: rotate(-5deg); 
 }
+
+.about .about-container{
+    padding: 0 40px;
+    transition: all .5s
+}
+.about .about-container h1 {
+    color:white;
+    font-family: roboto;
+    font-weight: 900;
+    letter-spacing: 2px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+    font-size: 32px;
+}
+
+.about .about-container h2 {
+    color: #D2D5DD;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    margin-top: -15px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.about .about-container p {
+    color: #9FA2B2;
+}
+
+@media screen and (max-width: 800px){
+    .about .section-title{
+        margin-top:70px;
+    }
+    .about .about-container{
+        margin-top:20px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .about .about-container{
+        padding: 0 20px;
+    }
+}
+/*-------------------- A B O U T --------------------*/
+
+.projects{
+    position: relative;
+}
+
+.projects .section-title{
+    top:40px;
+}
+
 
 /*-------------------- O N E  P R O J E C T --------------------*/
 /*----CONTAINER----*/
@@ -451,7 +548,7 @@ section{
     align-items: center;
     justify-content: space-around;
     flex-direction: initial;
-    padding:0 20px;
+    padding:25% 20px;
     color:white;
 }
 
@@ -466,7 +563,7 @@ section{
 }
 
 .media h5 {
-    color: white;
+    color: #9FA2B2;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -518,7 +615,6 @@ section{
 }
 
 .media .video h1{
-    cursor: default;
     font-family: roboto;
     font-weight: 900;
     letter-spacing: 2px;
@@ -533,7 +629,6 @@ section{
     width: 60%;
     color: #D2D5DD;
     color: #9FA2B2;
-    cursor: default;
 }
 .media .video .screenshot{
     position: relative;
@@ -544,8 +639,8 @@ section{
         flex-direction: column;
         padding-top: 20%;
         justify-content: center;
+        padding-bottom: 40px;
     }
-
     .media .video{
         margin:20px;
     }
@@ -557,6 +652,10 @@ section{
     left:0;
     width:100%;
     height:100vh;
+}
+
+#loadingDiv * {
+    cursor: default;
 }
 
 .loading {
