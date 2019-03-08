@@ -643,12 +643,12 @@ h1,h2,h3,h4,h5,p{
 @media screen and (max-width: 800px){
     .media{
         flex-direction: column;
-        padding-top: 35%;
         justify-content: center;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
     .media .video{
         margin:20px;
+        flex-basis: initial
     }
 }
 /*-------------------- L O A D I N G --------------------*/
