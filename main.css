@@ -19,6 +19,7 @@ section{
     width:100%;
     flex-direction:column;
     overflow: hidden;
+    height: auto;
 }
 
 a{
@@ -548,7 +549,8 @@ h1,h2,h3,h4,h5,p{
     align-items: center;
     justify-content: space-around;
     flex-direction: initial;
-    padding:25% 20px;
+    padding:0 20px;
+    padding-top:25%;
     color:white;
 }
 
@@ -559,6 +561,7 @@ h1,h2,h3,h4,h5,p{
     height: 20%;
     background-color: white;
     top: -10%;
+    left: -10%;
     transform: rotate(5deg); 
 }
 
@@ -569,6 +572,9 @@ h1,h2,h3,h4,h5,p{
     letter-spacing: 0.5px;
     position: absolute;
     bottom: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
     margin: 0;
 }
 
@@ -637,7 +643,7 @@ h1,h2,h3,h4,h5,p{
 @media screen and (max-width: 800px){
     .media{
         flex-direction: column;
-        padding-top: 20%;
+        padding-top: 35%;
         justify-content: center;
         padding-bottom: 40px;
     }
