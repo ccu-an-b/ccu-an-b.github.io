@@ -462,11 +462,10 @@ position:relative;
     position: absolute;
     color: #394053;
     font-size: 2em;
-    bottom: -12px;
+    top: 53px;
     left: 50%;
     margin: 0;
     font-family: "Raleway";
-    width:-webkit-fill-available;
 }
 
 .one-project .description .languages {
@@ -474,6 +473,7 @@ position:relative;
     flex-direction:column;
     width:150px;
     margin-left:40%;
+    margin-top:15px;
 }
 
 .one-project .description .languages h3{
@@ -556,7 +556,6 @@ position:relative;
 .one-project .code-link .button{
     padding: 15px 40px;
     color: #F4A194;
-    cursor: pointer;
     transition: all .4s;
     background-color:white;
 /*     border: 1.5px solid #77BAB1; */
@@ -568,16 +567,14 @@ position:relative;
     position:relative;
     border-radius:4px;
 }
-
-.one-project.freelance .code-link .button{
-    color: #71BCDC;
+.one-project .code-link .button a{
+    color: #F4A194;
+    cursor: pointer;
 }
-.one-project.camagru .code-link .button{
+
+.one-project.camagru .code-link .button a{
     color: #9FA2B2;
-}
-
-.one-project.yser  .code-link .button{
-    color: #FEDD5C;
+    cursor: pointer;
 }
 
 .one-project .code-link .button:hover {
@@ -585,17 +582,16 @@ position:relative;
     color:white;
 }
 
-.one-project.freelance .code-link .button:hover{
-    background-color: #71BCDC;
-    color:white;
-}
 .one-project.camagru .code-link .button:hover{
     background-color: #9FA2B2;
     color:white;
 }
 
-.one-project.yser  .code-link .button:hover{
-    background-color: #FEDD5C;
+.one-project .code-link .button:hover a{
+    color:white;
+}
+
+.one-project.camagru .code-link .button:hover a{
     color:white;
 }
 
