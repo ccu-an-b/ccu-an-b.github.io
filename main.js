@@ -26,7 +26,7 @@ $(document).ready(function(){
       mouseX = e.pageX;
       mouseY = e.pageY;
       traX = ((4 * mouseX) / 570) + 50;
-      traY = ((4 * mouseY) / 570) + 20;
+      traY = ((4 * mouseY) / 570) + 15;
       $(".title").css({"background-position": traX + "%" + traY + "%"});
     });
 
