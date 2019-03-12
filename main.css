@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Mr+Dafoe|Calligraffitti|Raleway:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Mr+Dafoe|Raleway:400,600,700);
 /*-------------------- M A I N --------------------*/
 body{
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -380,6 +380,7 @@ h1,h2,h3,h4,h5,p{
     border: 2px solid #77BAB1;
     flex: 1;
     display: flex;
+    z-index:1;
 }
 
 .projects .project-container .right-top{
@@ -389,6 +390,7 @@ h1,h2,h3,h4,h5,p{
     width: 120px;
     top: -40px;
     right:-40px;
+    z-index:-1
 }
 
 @media screen and (max-width: 600px){
@@ -407,193 +409,205 @@ h1,h2,h3,h4,h5,p{
     }
 }
 /*-------------------- O N E  P R O J E C T --------------------*/
-/*----CONTAINER----*/
-.one-project-container{
-    width: 100%;
-    position: relative;
-    max-width: 1200px;
-    margin: 20px 0;
-    padding-top: 75px;
-    min-height: 1050px;
-}
-.one-project-container .title {
-    position : absolute;
-    top:0;
+.one-project {
+    width:100%;
+    background-color:white;
+    display: none;
+    align-items:center;
+    position:relative;
+    z-index:-1;
 }
 
-.one-project-container.right .title{
-    right: 0;
-}
-.one-project-container .title h1, .one-project-container .title h2 {
-    margin : 0 1rem;
-    white-space: nowrap;
-    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
-}
-
-.one-project-container .title h1 {
-    font-family: 'Roboto', sans-serif;
-    color : #F4A194;
-    font-size : 8em;
-    font-weight : bold;
-    text-transform : uppercase;
-    animation : translateh1 3s ;
-    margin:0;
-    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
-}
-
-.one-project-container.right .title h1{
-    color: #71BCDC;
-}
-.one-project-container.camagru .title h1{
-    color: #9FA2B2;
-}
-
-.one-project-container.right.yser .title h1{
-    color: #FEDD5C;
-}
-.one-project-container .title h2 {
-    position : absolute;
-    color : #394053;
-    font-size : 4em;
-    animation : translateh2 3s;
-    bottom: -5px;
-    left: 45%;
-    filter: drop-shadow(0.015em 0.015em 0.015em rgba(0,0,0, 0.21));
-}  
-
-.one-project-container.right .title h2{
-    right: 45%;
-    left:initial;
+.one-project.active {
+    display:flex
 }
 
 /*----DESCRIPTION----*/
-.description{
-    background-color: #FCF6F4;
-    width: 50%;
-    float: right;
-    padding:110px 40px 90px 180px;
+.one-project .description {
+    width:60%;
+    height:100%;
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+  
+.one-project .description .title{
+position:relative;
+}
+.one-project .description .title h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #F4A194;
+    font-size: 4em;
+    text-align:center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin:0;
+    letter-spacing:-3px;
+    filter: drop-shadow( 0.15em 0.00em rgba(0,0,0, 0.1));
 }
 
-.one-project-container.right .description{
-    float:initial;
-    background-color: #EAF5FA;
-    text-align: right;
-    padding: 110px 180px 90px 40px;
+.one-project.freelance .description .title h1{
+    color: #71BCDC;
 }
-.one-project-container.camagru .description{
-    background-color: #EDEEF1;
-}
-
-.one-project-container.right.yser .description{
-    background-color: #FEFAE7;
-}
-.description h1{
-    margin:5px 0;
-}
-.description h2{
-      text-transform: uppercase;
-      font-size:1.1em;
-      letter-spacing:0.5px;
-      margin-bottom:0;
-      font-weight:bold;
-      color: #9FA2B2;
-}
-
-/*----MORE DESCRIPTION----*/
-.more-description{
-    float:right;
-    clear: both;
-    margin-right: 180px;
-    margin-top: 20px;
-}
-
-.one-project-container.right .more-description{
-    float: left;
-    margin-left: 240px;
-    margin-top: 20px;
-    text-align: right;
-}
-.more-description h3{
+.one-project.camagru .description  .title h1{
     color: #9FA2B2;
 }
-.more-description .link{
-    margin-top:20px;
-    padding: 15px 40px;
-    background-color:#F4A194;
-    cursor:pointer;
-    position:relative;
-    transition: all .3s;
+
+.one-project.yser .description .title h1{
+    color: #FEDD5C;
 }
 
-.one-project-container.camagru .more-description .link{
-    background-color:#9FA2B2;
-}
-
-.more-description .link a {
-    text-decoration:none;
-    color:white;
-    text-transform: uppercase;
-    letter-spacing:1px;
-    font-size:0.9rem;
-}
-.more-description .link:after{
-    content:'';
-    display:block;
-    width:100%;
-    height:50%;
-    background:rgba(225,225,225,0.2);
-    position:absolute;
-    top:0;
-    left:0; 
-}
-.more-description .link:hover, .one-project-container.camagru .more-description .link:hover{
-    background-color : #394053;
-}
-
-/*----SCREENSHOT----*/
-.screen-container{
-    top: 200px;
+.one-project .description .title h2{
     position: absolute;
-    width:70%;
+    color: #394053;
+    font-size: 2em;
+    bottom: -12px;
+    left: 50%;
+    margin: 0;
+    font-family: "Raleway";
+    width:-webkit-fill-available;
 }
 
-.one-project-container.right .screen-container{
-    right:0;
+.one-project .description .languages {
+    display:flex;
+    flex-direction:column;
+    width:150px;
+    margin-left:40%;
 }
 
-.screen-container .screen {
-    border-radius: 4px;
+.one-project .description .languages h3{
+    margin: 5px 0;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 18px;
+    color: #9FA2B2;
 }
-.screen-container .screen img {
+.one-project .description .info {
+    display:flex;
+    position:absolute;
+    bottom:20px ;
+    left:10px;
+}
+
+.one-project .description .info .one-info {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    margin:0px 20px;
+}
+
+.one-project .description .info .one-info h3, .one-project .description .info .one-info h4{
+    margin:0;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-weight:normal;
+    font-size:15px;
+    color: #9FA2B2;
+}
+.one-project .description .info .one-info h4{
+    color: #394053;
+    font-size:14px;
+}
+
+/*----SCREENSHOTS----*/
+.one-project .screenshots {
+    width:50%;
+    float:right;
+    position:relative;
+    display:flex;
+    padding:20px;
+    background-color:white;
+    right:-80px;
+}
+
+.one-project .screenshots .screen img {
     width:100%;
     object-fit: cover;
     border-radius: 4px;
-    /* box-shadow: 10px 10px 15px -7px rgba(0, 0, 0, 0.1); */
     box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.1);
 }
 
-.one-project-container.right .screen-container .screen img {
-    /* box-shadow: -10px 10px 15px -7px rgba(0, 0, 0, 0.1); */
-}
-.screen-container .screen.phone{
-    position:absolute;
-    bottom: -70px;
-    width: 100%;
-}
-.screen-container .screen.phone img {
-    width:35%;
-    float: right;
-    border-radius: 30px;
-}
-.screen-container .screen.full {
-    width:90%;
+.one-project .screenshots .screen.full {
+    width:100%;
 }
 
-.one-project-container.right .screen-container .screen.phone img {
-    float:left;
+.one-project .screenshots .screen.phone {
+    width:35%;
+    position: absolute;
+    bottom: -10%;
+    left: -15%;
 }
-.one-project-container.right .screen-container .screen.full {
-    float: right;
+
+.one-project.camagru .screenshots .screen.phone {
+    width:60%;
+}
+
+.one-project .code-link{
+    position: absolute;
+    padding: 0px 10px;
+    bottom: -25px;
+    right:80px;
+    background-color:white;
+
+}
+
+.one-project .code-link .button{
+    padding: 15px 40px;
+    color: #F4A194;
+    cursor: pointer;
+    transition: all .4s;
+    background-color:white;
+/*     border: 1.5px solid #77BAB1; */
+    z-index:2;
+    text-transform: uppercase;
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 14px;
+    position:relative;
+    border-radius:4px;
+}
+
+.one-project.freelance .code-link .button{
+    color: #71BCDC;
+}
+.one-project.camagru .code-link .button{
+    color: #9FA2B2;
+}
+
+.one-project.yser  .code-link .button{
+    color: #FEDD5C;
+}
+
+.one-project .code-link .button:hover {
+    background-color:#F4A194;
+    color:white;
+}
+
+.one-project.freelance .code-link .button:hover{
+    background-color: #71BCDC;
+    color:white;
+}
+.one-project.camagru .code-link .button:hover{
+    background-color: #9FA2B2;
+    color:white;
+}
+
+.one-project.yser  .code-link .button:hover{
+    background-color: #FEDD5C;
+    color:white;
+}
+
+.one-project .code-link .button:hover::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: rgba(225, 225, 225, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
@@ -702,6 +716,7 @@ h1,h2,h3,h4,h5,p{
 
 .media .video p a:hover {
     color: #77BAB1;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
 }
 .media .video .screenshot{
     position: relative;
