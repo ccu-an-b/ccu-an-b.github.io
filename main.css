@@ -617,7 +617,7 @@ h1,h2,h3,h4,h5,p{
     width: 200%;
     height: 20%;
     background-color: white;
-    top: -5%;
+    top: -8%;
     left: -10%;
     transform: rotate(5deg); 
 }
@@ -688,10 +688,20 @@ h1,h2,h3,h4,h5,p{
     float: right;
     text-align: right;
     font-family: Raleway;
-    min-width: 250px;
-    width: 60%;
+    min-width: 350px;
+    width: 80%;
     color: #D2D5DD;
     color: #9FA2B2;
+    margin-bottom: 0;
+}
+
+.media .video p a {
+    color: white;
+    transition: all .3s;
+}
+
+.media .video p a:hover {
+    color: #77BAB1;
 }
 .media .video .screenshot{
     position: relative;
@@ -706,6 +716,13 @@ h1,h2,h3,h4,h5,p{
     .media .video{
         margin:20px;
         flex-basis: initial
+    }
+}
+
+@media screen and (max-width: 400px){
+    .media .video p {
+        min-width: 0;
+        width: 100%;
     }
 }
 /*-------------------- L O A D I N G --------------------*/
