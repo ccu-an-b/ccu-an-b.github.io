@@ -8,6 +8,7 @@ $(window).on('load', function(){
         $(".introduction .subtitle").css("display","block")
     }, 4000)
     function removeLoader(){
+        $.scrollTo($("#home"), 0);
         $( "body").css("overflow-y", "auto");
         $(".loading-text").css("opacity", "0");
         $( "#loadingDiv" ).fadeOut(2000, function() {
@@ -38,6 +39,10 @@ $(document).ready(function(){
     $("#to_about_button").click(function(e) {
         e.preventDefault();
         $.scrollTo($("#about"), 1000);
+    });
+    $("#to_project_button").click(function(e) {
+        e.preventDefault();
+        $.scrollTo($("#projects"), 1000);
     });
     
 

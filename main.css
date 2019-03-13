@@ -342,6 +342,19 @@ h1,h2,h3,h4,h5,p{
     color: #9FA2B2;
 }
 
+.about .see-projects{
+    text-align: right;
+    text-transform: lowercase;
+    color: #77BAB1;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.about .see-projects:hover{
+    margin-right: 10px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+}
+
 @media screen and (max-width:900px){
     .about::after{
         bottom: -20%;
@@ -866,7 +879,7 @@ h1,h2,h3,h4,h5,p{
 .media .video .play:hover{
     opacity: 1;
     background-color: white;
-    color: #394053
+    color: #394053;
 }
 
 .media .video .play i {
