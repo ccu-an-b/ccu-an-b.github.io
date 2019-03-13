@@ -82,7 +82,6 @@ function resize(){
   
 //----------- C H A N G E  P R O J E C T -----------//
     $('.project-page').click(function(e) {
-        e.preventDefault();
         if ($(this).attr('class').search("active") === -1){
             $('.project-page').removeClass('active')
             $('.one-project').removeClass('active')

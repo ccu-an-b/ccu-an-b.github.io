@@ -308,10 +308,11 @@ h1,h2,h3,h4,h5,p{
     content: "";
     position: absolute;
     width: 200%;
-    height: 20%;
+    height: 30%;
     background-color: white;
-    bottom: -10%;
+    bottom: -15%;
     transform: rotate(-5deg); 
+    transition: all .3s;
 }
 
 .about .about-container{
@@ -341,15 +342,17 @@ h1,h2,h3,h4,h5,p{
     color: #9FA2B2;
 }
 
+@media screen and (max-width:900px){
+    .about::after{
+        bottom: -20%;
+    }
+}
 @media screen and (max-width: 800px){
     .about{
         padding-bottom: 40px;
     }
-    .about .section-title{
-        margin-top:70px;
-    }
     .about .about-container{
-        margin-top:20px;
+        margin:auto;
     }
 }
 
@@ -815,9 +818,10 @@ h1,h2,h3,h4,h5,p{
     width: 200%;
     height: 20%;
     background-color: white;
-    top: -8%;
+    top: -5%;
     left: -10%;
     transform: rotate(5deg); 
+    transition: all .3s;
 }
 
 .media h5 {
@@ -917,6 +921,11 @@ h1,h2,h3,h4,h5,p{
     }
 }
 
+@media screen and (max-width:900px){
+    .media::before{
+        top:-10%;
+    }
+}
 @media screen and (max-width: 400px){
     .media .video p {
         min-width: 0;
