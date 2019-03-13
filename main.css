@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900|Mr+Dafoe|Raleway:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,400,900|Mr+Dafoe|Raleway:400,600,700);
 /*-------------------- M A I N --------------------*/
 body{
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -319,6 +319,13 @@ h1,h2,h3,h4,h5,p{
     padding: 0 40px;
     transition: all .5s
 }
+
+.about .about-container .resume{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+}
+
 .about .about-container h1 {
     color:white;
     font-family: roboto;
@@ -340,7 +347,30 @@ h1,h2,h3,h4,h5,p{
 
 .about .about-container p {
     color: #9FA2B2;
+    flex-basis: 48%;
 }
+
+.about .about-container p span {
+    color:#D2D5DD;;
+    font-family: Roboto;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+.about .about-container p span a {
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.about .about-container p span a:hover {
+    padding-right: 5px;
+    filter: drop-shadow(0.25em 0.15em 0.015em rgba(0,0,0, 0.6));
+}
+
+/* .about .about-container p span.blue{
+    color: #77BAB1;
+} */
 
 .about .see-projects{
     text-align: right;
@@ -359,13 +389,20 @@ h1,h2,h3,h4,h5,p{
     .about::after{
         bottom: -20%;
     }
+    .about .about-container .resume{
+        display: initial;
+    }
 }
 @media screen and (max-width: 800px){
     .about{
-        padding-bottom: 40px;
+        padding-bottom: 70px;
     }
     .about .about-container{
         margin:auto;
+    }
+
+    .about .see-projects{
+        margin-top: 20px;
     }
 }
 
@@ -513,6 +550,7 @@ h1,h2,h3,h4,h5,p{
     position:absolute;
     bottom:20px ;
     left:10px;
+    width:200%;
 }
 
 .one-project .description .info .one-info {
@@ -560,6 +598,7 @@ h1,h2,h3,h4,h5,p{
         justify-content: center;
         margin-bottom: 20px;
         margin-top:10px;
+        width: 100%;
     }
     .one-project .description .info .one-info {
         margin: 0;
@@ -692,7 +731,7 @@ h1,h2,h3,h4,h5,p{
     cursor: pointer;
 }
 
-#camagru.one-project .code-link .button a{
+#camagru.one-project .code-link .button a, #camagru.one-project .code-link .button{
     color: #9FA2B2;
     cursor: pointer;
 }
