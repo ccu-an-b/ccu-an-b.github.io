@@ -392,7 +392,12 @@ h1,h2,h3,h4,h5,p{
     right:-40px;
     z-index:-1
 }
-
+@media screen and (max-width:800px){
+    .projects .project-container {
+        display:flex;
+        align-items: center
+    }
+}
 @media screen and (max-width: 600px){
     .projects{
         padding: 20px;
@@ -433,7 +438,7 @@ h1,h2,h3,h4,h5,p{
 }
   
 .one-project .description .title{
-position:relative;
+    position:relative;
 }
 .one-project .description .title h1 {
     font-family: 'Raleway', sans-serif;
@@ -445,6 +450,7 @@ position:relative;
     margin:0;
     letter-spacing:-3px;
     filter: drop-shadow( 0.15em 0.00em rgba(0,0,0, 0.1));
+    transition: all .3s;
 }
 
 #freelance.one-project .description .title h1{
@@ -466,6 +472,7 @@ position:relative;
     left: 50%;
     margin: 0;
     font-family: "Raleway";
+    transition: all .3s;
 }
 
 .one-project .description .languages {
@@ -474,6 +481,7 @@ position:relative;
     width:150px;
     margin-left:40%;
     margin-top:15px;
+    transition: all .3s;
 }
 
 .one-project .description .languages h3{
@@ -511,6 +519,61 @@ position:relative;
     font-size:14px;
 }
 
+@media screen and (max-width: 950px){
+    .one-project .description .languages {
+        margin-top:45px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .one-project {
+        flex-direction: column
+    }
+
+    .one-project .description{
+        height: auto;
+        width: 100%;
+        padding-top: 60px;
+    }
+
+    .one-project .description .title {
+        margin-top:20px;
+    }
+    .one-project .description .info{
+        position: initial;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top:10px;
+    }
+    .one-project .description .info .one-info {
+        margin: 0;
+        flex-basis: 30%;
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .one-project .description .title h1{
+        font-size: 3em;
+    }
+    .one-project .description .title h2{
+        text-align: center;
+        width: 100%;
+        left:0;
+        font-size: 1.5em;
+        top: 40px;
+    }
+
+    .one-project .description .languages {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
 /*----SCREENSHOTS----*/
 .one-project .screenshots {
     width:50%;
@@ -520,7 +583,7 @@ position:relative;
     padding:20px;
     background-color:white;
     right:-80px;
-    max-height: 70%;
+    transition: all .3s;
 }
 
 .one-project .screenshots .screen img {
@@ -528,10 +591,12 @@ position:relative;
     object-fit: cover;
     border-radius: 4px;
     box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.1);
+    transition: all .3s;
 }
 
 .one-project .screenshots .screen.full {
     width:100%;
+    transition: all .3s;
 }
 
 .one-project .screenshots .screen.phone {
@@ -539,12 +604,50 @@ position:relative;
     position: absolute;
     bottom: -10%;
     left: -15%;
+    transition: all .3s;
 }
 
-.one-project.camagru .screenshots .screen.phone {
+#camagru.one-project .screenshots .screen.phone {
     width:60%;
 }
 
+.one-project .screenshots.height{
+    width: auto;
+}
+
+.one-project .screenshots.height .screen img {
+    width: auto;
+    height: 100%;
+}
+
+.one-project .screenshots.height .screen.phone{
+    width: auto;
+    height: 55vh;
+    bottom: 0;
+}
+
+#camagru.one-project .screenshots.height .screen.phone{
+    width: auto;
+    height: 40vh;
+}
+
+.one-project .screenshots.height .screen.full{
+    height: 75vh;
+}
+
+@media screen and (max-width: 800px){
+
+    .one-project .screenshots{
+        width: 90%;
+        right: 0;
+        margin-top: 10px;
+    }
+    .one-project .screenshots .screen.phone{
+        display: none;
+    }
+
+}
+/*----BUTTON----*/
 .one-project .code-link{
     position: absolute;
     padding: 0px 10px;
@@ -607,6 +710,12 @@ position:relative;
     left: 0;
 }
 
+@media screen and (max-width:800px){
+    .one-project .code-link {
+        position: initial;
+        margin-bottom: 20px;
+    }
+}
 /*---Pagination---*/
 .projects .pagination{
     padding: 10px;
