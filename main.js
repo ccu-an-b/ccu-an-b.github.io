@@ -86,12 +86,14 @@ $(document).ready(function(){
     $("#to_about_button").click(function(e) {
         e.preventDefault();
         isUser = false
+        index = 1;
         $.scrollTo($("#about"), 1000);
         setTimeout(() => {isUser=true;},1200)
     });
     $("#to_project_button").click(function(e) {
         e.preventDefault();
         isUser = false
+        index = 2;
         $.scrollTo($("#projects"), 1000);
         setTimeout(() => {isUser=true;},1200)
     });
@@ -164,6 +166,7 @@ function resize(){
 //----------- C H A N G E  P R O J E C T -----------//
     $('.project-page').click(function(e) {
         if ($(this).attr('class').search("active") === -1){
+            project =  +$(this).attr('value')
             $('.project-page').removeClass('active')
             $('.one-project').removeClass('active')
             $(`#${$(this).attr('id')}.project-page`).addClass('active')
