@@ -1,3 +1,8 @@
+const section = ['home', 'about', 'projects', 'media']
+let index = 0;
+let isUser = false;
+let project = 1;
+
 $(window).on('load', function(){
     setTimeout(removeLoader, 2000); 
     });
@@ -9,13 +14,55 @@ $(window).on('load', function(){
     }, 4000)
     function removeLoader(){
         $.scrollTo($("#home"), 0);
-        $( "body").css("overflow-y", "auto");
+        // $( "body").css("overflow-y", "auto");
         $(".loading-text").css("opacity", "0");
         $( "#loadingDiv" ).fadeOut(2000, function() {
-            $( "#loadingDiv" ).remove();
+        $( "#loadingDiv" ).remove();
+        isUser=true;
     });  
 }
-  
+
+$(window).bind('mousewheel', function (e) {
+
+    e.preventDefault();
+
+    if ($(window).width() > 800 && $(window).height() >= 666){
+        if (e.originalEvent.wheelDelta < 0 || e.originalEvent.detail > 0){
+            if (index === 2 && project !== 4 && isUser)
+            {
+                isUser = false
+                project +=1;
+                $(`.pagination-container div:nth-child(${project}) .project-page`).trigger( "click" )
+                setTimeout(() => {isUser=true;},500)
+            }
+            else if (index !== 3 && isUser)
+            {
+                isUser = false
+                index +=1;
+                $.scrollTo($(`#${section[index]}`), 1000);
+                setTimeout(() => {isUser=true;},1200)
+            }
+        }
+        else {
+            if (index === 2 && project !== 1 && isUser)
+            {
+                isUser = false
+                project -=1;
+                $(`.pagination-container div:nth-child(${project}) .project-page`).trigger( "click" )
+                setTimeout(() => {isUser=true;},500)
+            }
+            else if (index !== 0 && isUser)
+            {
+                isUser = false
+                index -=1;
+                $.scrollTo($(`#${section[index]}`), 1000);
+                setTimeout(() => {isUser=true;},1200)
+            }
+        }
+    }
+    return false;
+
+})
 
 $(document).ready(function(){
     resize()
@@ -38,11 +85,15 @@ $(document).ready(function(){
 
     $("#to_about_button").click(function(e) {
         e.preventDefault();
+        isUser = false
         $.scrollTo($("#about"), 1000);
+        setTimeout(() => {isUser=true;},1200)
     });
     $("#to_project_button").click(function(e) {
         e.preventDefault();
+        isUser = false
         $.scrollTo($("#projects"), 1000);
+        setTimeout(() => {isUser=true;},1200)
     });
     
 
@@ -50,23 +101,35 @@ $(document).ready(function(){
 //----------- H E A D E R  L I N K -----------//
 $(".header #to_home").click(function(e) {
     e.preventDefault();
+    isUser = false
     $("#menu").trigger( "click" );
-    setTimeout(() => {$.scrollTo($("#home"), 1000)},500)
+    setTimeout(() => {$.scrollTo($("#home"), 1000)},500);
+    setTimeout(() => {isUser=true;},2500);
+    index = 0;
 });
 $(".header #to_about").click(function(e) {
     e.preventDefault();
+    isUser = false
     $("#menu").trigger( "click" );
     setTimeout(() => {$.scrollTo($("#about"), 1000)},500)
+    setTimeout(() => {isUser=true;},2500)
+    index = 1;
 });
 $(".header #to_projects").click(function(e) {
     e.preventDefault();
+    isUser = false
     $("#menu").trigger( "click" );
-    setTimeout(() => {$.scrollTo($("#projects"), 1000)}, 500)
+    setTimeout(() => {$.scrollTo($("#projects"), 1000)}, 500);
+    setTimeout(() => {isUser=true;},2500);
+    index = 2;
 });
 $(".header #to_media").click(function(e) {
     e.preventDefault();
+    isUser = false
     $("#menu").trigger( "click" );
-    setTimeout(() => {$.scrollTo($("#media"), 1000)},1000)
+    setTimeout(() => {$.scrollTo($("#media"), 1000)},1000);
+    setTimeout(() => {isUser=true;},2500);
+    index = 3;
 });
 
 
@@ -77,6 +140,19 @@ window.addEventListener('resize', function(){
 
 function resize(){
     const ratio = $(window).width()/$(window).height()
+    if($(window).width() > 800 && $(window).height() < 980 && $(window).height() >= 666)
+        $('.media').addClass('height'); 
+    else {
+        $('.media').removeClass('height'); 
+    }
+
+    if($(window).width() < 800 || $(window).height() < 666)
+        $( "body").css("overflow-y", "auto");
+
+    if($(window).width() > 800 && $(window).height() >= 666)
+        $( "body").css("overflow-y", "hidden");
+    
+
     if (ratio > 1.8 && $(window).width() > 800){
         $('.screenshots').addClass('height'); 
     }
