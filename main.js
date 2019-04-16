@@ -24,11 +24,10 @@ $(window).on('load', function(){
 
 $(window).bind('mousewheel', function (e) {
 
-    e.preventDefault();
-
     if ($(window).width() > 800 && $(window).height() >= 666){
+        e.preventDefault();
         if (e.originalEvent.wheelDelta < 0 || e.originalEvent.detail > 0){
-            if (index === 2 && project !== 4 && isUser)
+            if (index === 2 && project !== 5 && isUser)
             {
                 isUser = false
                 project +=1;
@@ -59,8 +58,8 @@ $(window).bind('mousewheel', function (e) {
                 setTimeout(() => {isUser=true;},1200)
             }
         }
+        return false;
     }
-    return false;
 
 })
 

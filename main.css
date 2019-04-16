@@ -505,7 +505,9 @@ h1,h2,h3,h4,h5,p{
     filter: drop-shadow( 0.15em 0.00em rgba(0,0,0, 0.1));
     transition: all .3s;
 }
-
+#hypertube.one-project .description .title h1{
+    color: #E59500;
+}
 #freelance.one-project .description .title h1{
     color: #71BCDC;
 }
@@ -735,6 +737,10 @@ h1,h2,h3,h4,h5,p{
     color: #9FA2B2;
     cursor: pointer;
 }
+#hypertube.one-project .code-link .button a, #hypertube.one-project .code-link .button{
+    color: #E59500;
+    cursor: pointer;
+}
 
 .one-project .code-link .button:hover {
     background-color:#F4A194;
@@ -746,6 +752,12 @@ h1,h2,h3,h4,h5,p{
     color:white;
 }
 
+#hypertube.one-project .code-link .button:hover{
+    background-color: #E59500;
+    color:white;
+}
+
+
 .one-project .code-link .button:hover a{
     color:white;
 }
@@ -754,6 +766,9 @@ h1,h2,h3,h4,h5,p{
     color:white;
 }
 
+#hypertube.one-project .code-link .button:hover a{
+    color:white;
+}
 .one-project .code-link .button:hover::after{
     content: '';
     display: block;
@@ -826,6 +841,11 @@ h1,h2,h3,h4,h5,p{
 
 .projects .pagination .pagination-container #yser.project-page.active, .projects .pagination .pagination-container #yser.project-page:hover{
     background-color:#FEDD5C;
+    color:white;
+}
+
+.projects .pagination .pagination-container #hypertube.project-page.active, .projects .pagination .pagination-container #hypertube.project-page:hover{
+    background-color:#E59500;
     color:white;
 }
 
